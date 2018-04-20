@@ -17,7 +17,7 @@
 </header>
   <section class="cd-faq">
       <ul class="cd-admin-categories"><!--cd-admin-categories-->
-          <li><a href="/admin">Главная страница</a></li>
+          <li><a href="/">Главная страница</a></li>
           <li><a href="/admin/users">Администраторы</a></li>
           <li><a href="/admin/categories">Список тем</a></li>
           <li><a href="/admin/questions">Список вопросов</a></li>
