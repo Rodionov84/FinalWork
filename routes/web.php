@@ -34,7 +34,6 @@ Route::group(['prefix'=>'admin','middleware'=>['web','auth']], function () {
     Route::get('/categories/delete', ['uses' => 'Admin\CategoriesController@deletePage']);
     Route::get('/categories/edit', ['uses' => 'Admin\CategoriesController@editPage']);
     Route::get('/categories/create', ['uses' => 'Admin\CategoriesController@createPage']);
-    Route::post('/categories/create', ['uses' => 'Admin\CategoriesController@createCategory']);
 
     Route::get('/categories/questions', ['uses' => 'Admin\QuestionsController@listPage']);
     Route::get('/questions', ['uses' => 'Admin\QuestionsController@listPage']);
