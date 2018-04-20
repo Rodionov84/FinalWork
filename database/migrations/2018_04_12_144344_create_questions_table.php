@@ -18,10 +18,14 @@ class CreateQuestionsTable extends Migration
             $table->tinyInteger('status')->unsigned()->default(0);
             $table->string('user_name', 50);
             $table->string('user_email', 50);
-            $table->tinyInteger('category_id')->unsigned();
+            $table->integer('category_id')->unsigned();
             $table->string('question');
             $table->text('response')->nullable()->defualt(NULL);
             $table->timestamps();
+
+            $table->foreign('category_id')
+                ->references('id')->on('categories')
+                ->onDelete('cascade');
         });
     }
 
