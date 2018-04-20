@@ -1,3 +1,8 @@
+@extends('admin.tpl.main')
+
+@section('title', 'Users')
+
+@section('content')
 <table width="100%">
     <thead>
         <tr>
@@ -7,15 +12,16 @@
         </tr>
     </thead>
     <tbody>
-    @foreach(App\Users::all() as $user)
+    @foreach(App\User::all() as $user)
         <tr>
-            <td class="column-admin">{{$user->user_id}}</td>
+            <td class="column-admin">{{$user->id}}</td>
             <td class="column-admin">{{$user->login}}</td>
             <td class="column-admin">
-                <a href="/admin/users/edit?user_id={{$user->user_id}}">Изменить пароль</a> <span>/</span>
-                <a href="/admin/users/remove?user_id={{$user->user_id}}">Удалить из списка</a>
+                <a href="/admin/users/edit?user_id={{$user->id}}">Изменить пароль</a> <span>/</span>
+                <a href="/admin/users/delete?user_id={{$user->id}}">Удалить</a>
             </td>
         </tr>
     @endforeach
     </tbody>
 </table>
+@endsection

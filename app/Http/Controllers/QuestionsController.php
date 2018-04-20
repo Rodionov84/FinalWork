@@ -2,29 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Questions;
+use App\Question;
 use Illuminate\Http\Request;
-use Symfony\Component\Console\Question\Question;
+//use Symfony\Component\Console\Question\Question;
 
 class QuestionsController extends Controller
 {
-    public function newQuestion()
+    public function newQuestion(Request $request)
     {
-        $new_question = new Questions();
+        $new_question = new Question();
 
-        $new_question->user_name = $_GET["user_name"];
-        $new_question->user_email = $_GET["user_email"];
-        $new_question->category_id = $_GET["category_id"];
-        $new_question->question = $_GET["question"];
+        $new_question->user_name = $request->input('user_name');
+        $new_question->user_email = $request->input('user_email');
+        $new_question->category_id = $request->input('category_id');
+        $new_question->question = $request->input('question');
 
         $new_question->save();
 
-        header("Location: /success_question ");
-        exit();
+        return redirect('/success_question');
     }
 
     public function successQuestion()
     {
-        return view('tpl.main')->with("title", "Вопрос задан")->with("content", view('add_question.success'));
+        //return view('tpl.main')->with("title", "Вопрос задан")->with("content", view('add_question.success'));
+        $backLink = "/";
+        return view('add_question.success')->with("backLink", $backLink);
     }
 }

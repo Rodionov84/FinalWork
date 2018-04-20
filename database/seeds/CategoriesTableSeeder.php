@@ -1,6 +1,6 @@
 <?php
 
-use App\Categories;
+use App\Category;
 use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
@@ -14,11 +14,11 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')->truncate();
 
-        Categories::create(['title'=>'Account']);
-        Categories::create(['title'=>'Basic']);
-        Categories::create(['title'=>'Delivery']);
-        Categories::create(['title'=>'Mobile']);
-        Categories::create(['title'=>'Payments']);
-        Categories::create(['title'=>'Privacy']);
+        Category::create(['title'=>'Account']);
+        Category::create(['title'=>'Basic']);
+        Category::create(['title'=>'Delivery']);
+        Category::create(['title'=>'Mobile']);
+        Category::create(['title'=>'Payments']);
+        Category::create(['title'=>'Privacy']);
     }
 }

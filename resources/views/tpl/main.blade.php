@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="/css/style.css?{{ rand(0,1000) }}"> <!-- Resource style -->
     <script src="/js/modernizr.js"></script> <!-- Modernizr -->
-    <title>{{$title}}</title>
+    <title>@yield('title')</title>
 </head>
 <body>
 <header>
@@ -17,7 +17,13 @@
 </header>
 <section class="cd-faq">
 
-    {!! $content !!}
+    <ul class="cd-faq-categories">
+        @include('menu.categories')
+        <li><a href="#add_form">Связаться с нами</a></li>
+    </ul> <!-- cd-faq-categories -->
+    <div class="cd-faq-items">
+        @yield('content')
+    </div>
 
 </section> <!-- cd-faq -->
 

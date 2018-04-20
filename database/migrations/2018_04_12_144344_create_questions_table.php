@@ -14,7 +14,7 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function(Blueprint $table) {
-            $table->increments('question_id');
+            $table->increments('id');
             $table->tinyInteger('status')->unsigned()->default(0);
             $table->string('user_name', 50);
             $table->string('user_email', 50);

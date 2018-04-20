@@ -1,6 +1,6 @@
-@foreach(App\Categories::all() as $category)
+@foreach(App\Category::all() as $category)
     <li>
-        <a href="#cat{{$category->category_id}}">
+        <a href="#cat{{$category->id}}">
             {{$category->title}}
         </a>
     </li>
